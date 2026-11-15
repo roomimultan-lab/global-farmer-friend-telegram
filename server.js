@@ -426,7 +426,30 @@ app.post('/admin/send-alert', async (req, res) => {
   res.json({ ok: true, matched: targets.length, sent, mode: MOCK_MODE ? 'mock' : 'live' });
 });
 
+// ---------- Auto-set Telegram webhook on startup ----------
+// So the owner does NOT need to open the setWebhook URL by hand.
+// Uses the token already in Railway (never logged) and the public
+// domain Railway gives this service, or WEBHOOK_URL if set.
+async function setWebhookOnStartup() {
+  if (MOCK_MODE) return;
+  const domain = process.env.WEBHOOK_URL
+    || (process.env.RAILWAY_PUBLIC_DOMAIN ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}/telegram` : null)
+    || 'https://global-farmer-friend-telegram-production.up.railway.app/telegram';
+  try {
+    const res = await fetch(`${TELEGRAM_API}/bot${TELEGRAM_BOT_TOKEN}/setWebhook`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ url: domain }),
+    });
+    const data = await res.json().catch(() => ({}));
+    console.log('Webhook set:', data.ok ? 'OK' : (data.description || 'failed'));
+  } catch (e) {
+    console.error('Webhook set error (bot will still answer once webhook is set manually):', e.message);
+  }
+}
+
 app.listen(PORT, () => {
   console.log(`Global Farmer Friend Telegram server on port ${PORT} — mode=${MOCK_MODE ? 'mock' : 'live'}, farmers=${db.farmers.length}`);
   if (MOCK_MODE) console.log('MOCK MODE: set TELEGRAM_BOT_TOKEN in Railway to go live. No messages are sent to Telegram in mock mode.');
+  setWebhookOnStartup();
 });
