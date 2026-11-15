@@ -1,0 +1,387 @@
+{
+  "_note": "Crop-specific advice for Global Farmer Friend bot. Doses verified from Punjab Agriculture Dept Pakistan, PAU, ICAR, FAO/USDA sources (see AUDIT_REPORT.md). Country keys only where advice genuinely differs; otherwise use 'default'. NEVER present an unverified dose as a number — those entries say soil test / local officer. Units are stated in every entry. 1 ha = 2.47 acres.",
+  "cotton": {
+    "fertilizer": {
+      "India": "Per acre (PAU Punjab, N-P2O5 kg): non-Bt 30:12 (65 kg urea + 27 kg DAP); Bt 37:12 (80 kg urea + 27 kg DAP); Bt hybrids 55:12 (120 kg urea + 27 kg DAP). K on soil-test basis. Skip P if preceding wheat got full P. All P and K + 1/4-1/3 N basal; rest of N in 2-3 top-dressings — squaring 25-30 days, flowering 50-60 days, boll formation if needed. Do NOT over-apply N — it causes rank growth and worsens pink bollworm and whitefly.",
+      "Pakistan": "Per acre: 1 bag DAP (or 2.5 bags Nitrophos) at sowing, mixed in soil + 2-3 bags urea/acre in splits at vegetative growth, squaring, flowering and boll formation. Potash and micronutrients (e.g. boron) only on soil analysis.",
+      "default": "Per acre, about 60-100 kg N, 25-50 kg P2O5, 25-50 kg K2O (irrigated; less rainfed). All P and K + part N at sowing; rest at squaring, flowering and boll formation. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Total water 35-45 inches. Most critical: early flowering to first boll opening, and maturity. Irrigate every 7-10 days in Pakistan. Avoid both waterlogging and severe stress at flowering/boll formation."
+    },
+    "name": "Cotton",
+    "pest": "Main problems: (1) Pink bollworm — sow on time; pheromone traps from about 45 days (5 traps/hectare) to monitor; collect/destroy fallen squares/bolls; destroy residues after harvest. Spray ONLY at threshold: 10% rosette flowers, or 10% damaged green bolls, or 8 moths/trap for 3 days. Insecticide type only, follow label; avoid synthetic pyrethroids before 120 days. (2) Whitefly (spreads leaf curl) — sow on time; desi cotton where whitefly is severe; border rows of sorghum/maize; yellow sticky traps; neem early. Chemical only from August if needed, follow label.",
+    "sowing": {
+      "Egypt": "Mid-March to mid-May; harvest September to mid-December.",
+      "India": "North (Punjab, Haryana, Rajasthan): 1 April-15 May for American hybrids/varieties; desi cotton up to 30 April. Central India: with monsoon rains, June-early July.",
+      "Pakistan": "Punjab: April to mid-May is optimum. Early sowing tolerates whitefly and leaf curl better.",
+      "USA": "March in Arizona/Texas; early April California/New Mexico/Alabama; mid-late April most southern states; early May Kansas/Oklahoma.",
+      "default": "Sow in spring when soil is warm, after frost risk. In South Asia April-May (north) or June-July with monsoon (central). Follow your local calendar."
+    },
+    "type": "field"
+  },
+  "maize": {
+    "fertilizer": {
+      "India": "Per acre (ICAR hybrid grain maize): about 48-60 kg N, 24-30 kg P2O5, 16-24 kg K2O. All P and K + 1/4 to 1/3 N as basal at sowing; next N at knee-high (25-30 days); next at tasseling/silking (45-55 days).",
+      "Kenya": "Per acre (KALRO): at planting DAP 40-60 kg/acre. At knee-height, 4-6 weeks: urea 40-60 kg/acre. At tasseling, 8-10 weeks (optional): urea 20-30 kg/acre.",
+      "Nigeria": "Per acre (NAERLS/IITA): at planting or within 1st week, NPK 15-15-15 about 2.5 bags/acre. Top-dress at 4-5 weeks after planting: urea about 1 bag/acre (sooner, 3-4 weeks, for extra-early varieties).",
+      "Pakistan": "Per acre: at sowing 1.5-2 bags DAP + 1 bag SOP (potash). Urea 3 bags/acre in 3 equal splits — at 4-leaf stage, knee-high stage, and tasseling. Seed: 8-10 kg hybrid seed/acre on ridges; 10-12 kg/acre drill sowing.",
+      "default": "Per acre, about 48-60 kg N, 24-30 kg P, 16-24 kg K. All P and K + part N at sowing; rest of N at knee-high and tasseling. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Total about 50-65 cm water. First irrigation 12-15 days after sowing. MOST CRITICAL: tasseling and silking, 46-65 days — never let the field go dry here; even 2 days stress can cut yield about 20%. Also critical: knee-high 30-40 days and grain filling 66-95 days. Do NOT let water stand — waterlogging for even 6-7 hours damages maize."
+    },
+    "name": "Maize (Corn)",
+    "pest": "Main problem: Fall armyworm — scout twice a week while maize is young; plant early and at the same time as neighbours; push-pull (desmodium between rows, Napier grass around field); hand-pick egg masses; neem/Bt-type biopesticide, follow label. Chemical only if needed: product registered for fall armyworm in your country, spray into the whorl, follow label. Also: stem/shoot borer — timely sowing, clean field, destroy residues; insecticide type only, follow label.",
+    "sowing": {
+      "India": "Kharif: last week June-first fortnight July (Indo-Gangetic plains 15 June-15 July). Rabi: last week Oct-first fortnight Nov. Spring: 20 Jan-15 Feb.",
+      "Kenya": "Plant with the rains — long rains March, short rains October. Exact dates vary by county — check local extension.",
+      "Nigeria": "Early season: forest zone 15 Mar-1 Apr, derived savanna April once rains are steady, southern Guinea savanna May-June. Late season: 1-15 Aug only where rainfall will be enough.",
+      "Pakistan": "Spring maize: mid-Jan to end Feb (optimum, 1st week Feb-1st week Mar). Autumn maize: 20 July-15 August.",
+      "default": "Plant with the rains / in the warm season. Kharif Jun-Jul, Rabi Oct-Nov, Spring Jan-Feb in South Asia. Follow your local calendar."
+    },
+    "type": "field"
+  },
+  "rice": {
+    "fertilizer": {
+      "India": "Per acre (PAU Punjab): PR 132: 31.5:12:12 kg N-P2O5-K2O (67.5 kg urea + 27 kg DAP + 20 kg MOP); other varieties 42:12:12 kg (90 kg urea + 27 kg DAP + 20 kg MOP). N in 3 equal splits at 7, 21 and 42 days after transplanting (35 days for PR 126), on moist not flooded soil; all P and K before puddling. Basmati: omit P if full P was given to wheat.",
+      "Pakistan": "Per acre (Rice Research Institute, Kaka Shah Kaku): Basmati N-P-K 55-30-25 kg; IRRI/coarse type 70-40-25 kg. All P and K + half N at puddling; rest of N in 2 splits — at 35 days after transplanting and before flowering. About 1-1.5 bags DAP/acre at puddling + about 2 bags urea/acre in splits.",
+      "default": "Per acre, about 55-70 kg N, 30-40 kg P, 25 kg K (varies by type). All P and K + half N at puddling; rest of N in 2-3 splits up to flowering. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Keep shallow water 2-3 cm after transplanting, 5 cm as crop grows. Do NOT stress at: active tillering, panicle initiation, booting, heading, flowering. From heading to 1 week after flowering keep 5 cm water. Drain 7-10 days before harvest. Alternate Wetting and Drying can save water, but NOT during heading-flowering."
+    },
+    "name": "Rice (Paddy)",
+    "pest": "Main problems: (1) Yellow stem borer — dead hearts / white ears; plant on time, collect dead hearts, pheromone traps 5/acre, Trichogramma release; insecticide type only, follow label. (2) Brown planthopper — plants dry up ('hopper burn'); use resistant variety, split N, do NOT over-apply N, avoid early broad-spectrum sprays. (3) Rice blast — diamond-shaped leaf spots; resistant variety, balanced N; fungicide type only, follow label.",
+    "sowing": {
+      "Bangladesh": "Aus: sow/transplant Mar-Apr, harvest Jul-Aug. Aman: transplant Jul-Aug, harvest Nov-Dec. Boro (irrigated): transplant Dec-early Feb, harvest Apr-Jun.",
+      "India": "Punjab: nursery 20 May-20 June; transplant 20 June-10 July (short-duration PR 126: transplant by 15 July). Direct-seeded: sow 1-15 June. Kharif generally June-July; Rabi rice Nov-Dec.",
+      "Pakistan": "Nursery: coarse/IRRI types 20 May-7 June; Basmati 1-20 June. Transplant 25-30-day-old seedlings (5-6 leaves), generally in July; Basmati 1-20 July. Direct-seeded: end June-early July.",
+      "default": "Transplant 25-30-day-old seedlings in the main rainy season (June-July in South Asia). Follow your local rice calendar — seasons differ by country."
+    },
+    "type": "field"
+  },
+  "soybean": {
+    "fertilizer": {
+      "India": "Per acre (ICAR-IISR Central Zone): N:P2O5:K2O:S = 10:24:16:8 kg. All basal at sowing, drilled about 5 cm deep, never in contact with seed. No top-dressing unless KVK advises — soybean fixes its own N after nodulation; excess urea suppresses nodulation. FYM 2-4 tonnes/acre before sowing. PAU variant: 12.5 kg N + 32 kg P2O5 per acre at sowing.",
+      "Pakistan": "Per acre: 12.5 kg N + 32 kg P (consistent with PAU level). Seed treat first with fungicide, then soybean-specific Rhizobium + PSB, sow same day.",
+      "default": "Per acre, about 10 kg N, 24 kg P2O5, 16 kg K2O, all basal at sowing. Soybean fixes its own nitrogen — do not over-apply urea. For Bangladesh, Brazil and USA no per-acre dose verified — soil test / local agriculture officer only."
+    },
+    "irrigation": {
+      "default": "Mostly rainfed. Critical: germination/seedling, flowering, pod formation, seed/pod filling — a dry spell at any of these causes the biggest loss. If irrigated: 3-5 light irrigations as needed; avoid waterlogging (reduces nodulation, causes root rot)."
+    },
+    "name": "Soybean",
+    "pest": "Main problems: (1) Girdle beetle + stem fly — sow end June, deep summer ploughing, remove infested parts below the girdle up to 30-45 days, avoid excess N, rotate with maize/wheat; seed treatment / insecticide type only if needed, follow label. (2) Yellow mosaic virus (whitefly) — no cure; resistant variety, treated seed, rogue early infected plants, control whitefly; insecticide type only, follow label.",
+    "sowing": {
+      "Bangladesh": "Rabi (main): mid-Dec to mid-Jan. Kharif-2: mid-Jul to mid-Sep.",
+      "Brazil": "Main: mid-Sep to end Dec.",
+      "India": "Central (MP, Maharashtra): 20 June-5 July, after about 100 mm monsoon rain. South Maharashtra 15-30 June; North Plain 20 June-5 July; Karnataka 1st week June-15 July.",
+      "Pakistan": "Kharif/monsoon: mid-June best (after monsoon onset, to 1st week July). Spring: 15 Jan-end Feb. Autumn: 15 Jul-15 Aug.",
+      "USA": "April-June; main April-May, harvest Sep-Nov.",
+      "default": "Sow at the start of the rainy season in your region (June-July in South Asia, Sep-Dec in Brazil, Apr-May in USA). Follow your local calendar."
+    },
+    "type": "field"
+  },
+  "sugarcane": {
+    "fertilizer": {
+      "India": "Per acre (PAU Punjab): N 90 kg (urea about 200 kg total); P and K only as per soil test. Splits: about 66 kg urea at sowing, 66 kg at 2nd irrigation, 66 kg at 4th irrigation. Autumn plant crop 195 kg urea/acre in 3 splits; spring plant crop 130 kg; ratoon 195 kg. FYM 8 tonnes/acre before sowing.",
+      "Pakistan": "Per acre (Sindh Govt): Punjab N 70-100 kg, P2O5 50 kg, K2O 50-60 kg = urea 2.25-3.5 bags, DAP 2.25 bags, MOP 1.75-2 bags (or SOP 2-2.5 bags). Sindh N 70-110 kg, P2O5 50 kg, K2O 50-70 kg. All P and K + 1/4 N at planting in furrows; rest of N in 3 equal splits Apr, May, by mid-Jun (Feb-Mar crop). Sep-planted crop: 1/5 N at planting, then 4 equal splits Mar, Apr, May, Jun.",
+      "default": "Per acre, about 70-100 kg N, 50 kg P2O5, 50-60 kg K2O. All P and K + 1/4 N at planting; rest of N in splits during tillering and grand growth. For Brazil/Egypt no per-acre dose verified — soil test / local agriculture officer only."
+    },
+    "irrigation": {
+      "default": "Critical: germination, tillering/formative stage, grand growth (90-270 days). Avoid stress in tillering and grand growth; reduce/stop near maturity for sugar recovery. Pakistan: 16-20 irrigations total (May-Jun every 10-12 days, Jul-Aug every 13-15 days). Irrigate immediately after planting if soil is dry."
+    },
+    "name": "Sugarcane",
+    "pest": "Main problems: (1) Early shoot borer / top borer / internode borer — healthy seed cane, resistant variety, remove/destroy dead hearts Apr-Jun, pheromone traps 4-5/acre, Trichogramma release Jun-Aug; insecticide type only if needed, follow label. (2) Red rot — NO cure in standing crop; disease-free seed, resistant variety, reject seed lots with >5% nodal infection, rogue infected clumps, avoid waterlogging, crop rotation.",
+    "sowing": {
+      "Bangladesh": "No Bangladesh-specific window verified — follow BARI / local officer, or the nearest North India window with that caveat.",
+      "Brazil": "South-Central: Sep-Nov.",
+      "Egypt": "Spring Feb-Mar; autumn Sep-Oct; crop takes 12 months.",
+      "India": "North: autumn 20 Sep-20 Oct, spring Feb-Mar. South: Adsali Jun-Jul, pre-season Oct-Nov, Eksali/Suru Jan-Feb.",
+      "Pakistan": "Autumn: 1st week Sep to mid-Oct. Spring: mid-Feb to end Mar. KP: autumn Oct-Nov.",
+      "default": "Plant setts in autumn (Sep-Oct) or spring (Feb-Mar) in South Asia. Follow your local sugarcane calendar."
+    },
+    "type": "field"
+  },
+  "wheat": {
+    "fertilizer": {
+      "India": "Per acre (ICAR-IIWBR, irrigated timely): about 49-24-16 kg N-P2O5-K2O. 1/3 N + all P and K at sowing; rest of N in 2 equal splits at 1st irrigation (CRI, 21-25 days) and 2nd irrigation (40-45 days). Rainfed: about 24-12-8 kg/acre, all at sowing. PAU Punjab (medium soil): 55 kg DAP + 90 kg urea/acre, urea split at 1st and 2nd irrigation.",
+      "Pakistan": "Per acre (Punjab Agriculture Dept, irrigated): weak soil N-P-K 64-46-25 kg = 2 bags DAP + 2 bags urea + 1 bag SOP/MOP; average soil 54-34-25 = 1.5 bags DAP + 1.75 bags urea + 1 bag SOP/MOP; fertile soil 46-30-25 = 1.25 bags DAP + 1.5 bags urea + 1 bag SOP/MOP. All P and K + first N at sowing; rest of N in splits at 1st irrigation (CRI, 20-25 days) and 2nd irrigation (40-45 days). Rainfed: 32-23-12 kg/acre (low rain) to 48-34-25 (high rain), all at sowing. Zinc sulphate 5 kg + boric acid 2.5 kg/acre at sowing can help — do NOT apply zinc if used on the previous crop.",
+      "default": "Fertilizer depends on soil test. As a guide, irrigated wheat needs about 120:60:40 kg N-P2O5-K2O per hectare (about 49:24:16 kg/acre): 1/3 N + all P and K at sowing, rest of N at 1st and 2nd irrigation. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "India": "4-6 irrigations. Most critical: CRI 20-25 days after sowing, then tillering 40-45 days, jointing 60-65 days, flowering 85-90 days, milk 100-105 days.",
+      "Pakistan": "4-6 irrigations. Most critical: Crown Root Initiation (CRI) 20-25 days after sowing. Then tillering 40-45 days, late jointing 60-65 days, flowering 85-90 days, milk/grain filling 100-105 days. If water is short: 1 irrigation only = CRI; 2 = CRI + flowering; 3 = CRI + boot + milk.",
+      "default": "4-6 irrigations. Most critical: crown root initiation 20-25 days after sowing, then tillering, jointing, flowering and grain filling. Do not let the crop stress at flowering."
+    },
+    "name": "Wheat",
+    "pest": "Main problems: (1) Yellow/brown rust — grow a locally recommended rust-resistant variety, sow in the recommended window, watch from January for yellow/orange streaks; fungicide type only, follow label. (2) Wheat aphid — yellow sticky traps 15/acre, conserve natural enemies; spray only above threshold, insecticide type only, follow label.",
+    "sowing": {
+      "India": "North-West Plains (Punjab, Haryana, Delhi, Rajasthan, W. UP) irrigated: 1-15 Nov. North-Eastern Plains: 10-20 Nov. Late sowing after 25 Nov: seed 50 kg/acre.",
+      "Pakistan": "Irrigated Punjab: 1-20 Nov is best (to 30 Nov, some varieties to 10 Dec). Rainfed (barani): 15 Oct-15 Nov. Seed: 40 kg/acre timely, 45 kg/acre 21-30 Nov, 50 kg/acre 1-10 Dec; rainfed 50 kg/acre.",
+      "default": "Winter wheat: sow in autumn, mid-Sep to mid-Oct in temperate regions; spring wheat: late Mar-Apr once soil is workable. Follow your local agriculture calendar."
+    },
+    "type": "field"
+  },
+  "brinjal": {
+    "fertilizer": {
+      "India": "Per acre (ICAR): about 61:30:30 kg N-P2O5-K2O + 10-15 tonnes FYM/acre. 1/3 N + full P and K as basal; 1/3 N at 1 month after transplanting + earthing-up; remaining 1/3 N at 55-60 days. Dose differs by variety/system — soil test / local officer governs.",
+      "Pakistan": "Per acre: follow the India ICAR guide above as a starting point — no Pakistan-specific per-acre dose verified. Soil test / local agriculture officer only.",
+      "default": "Per acre, about 61 kg N, 30 kg P2O5, 30 kg K2O + FYM. 1/3 N + all P and K basal; rest of N in 2 splits. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Summer every 3-4 days; winter every 12-15 days. Critical: flowering and fruiting; keep soil moist on frosty days. Avoid water stagnation — brinjal cannot tolerate waterlogging. Drip preferred."
+    },
+    "name": "Brinjal / Eggplant",
+    "pest": "Main problems: (1) Fruit and shoot borer — scout weekly, remove/destroy infested shoots and fruits, pheromone traps, neem extract, Bt/spinosad-type only if labelled, follow label. (2) Bacterial wilt — NO cure; resistant varieties (Arka Nidhi, Arka Keshav, Pant Samrat), rotate with cereals (maize, sorghum, millet) — do NOT rotate with tomato/potato/brinjal/okra; remove wilted plants, soil solarisation in summer.",
+    "sowing": {
+      "India": "Nursery Oct, Nov, Feb-Mar, Jul for the four seasonal crops. Rabi Oct-Nov (irrigated). Transplant 4-5-week-old seedlings.",
+      "Pakistan": "Nursery Feb, transplant Mar; monsoon Jul-Aug.",
+      "default": "Transplant 4-5-week-old nursery seedlings. In South Asia: Feb-Mar and Jul-Aug, and Oct-Nov for Rabi. Follow your local calendar."
+    },
+    "type": "vegetable"
+  },
+  "cabbage": {
+    "fertilizer": {
+      "India": "Per acre (ICAR-CIARI): about 36:32:24 kg N-P2O5-K2O + FYM 20 tonnes/ha. 60 N + 80 P + 60 K per ha as basal, remaining 30 kg N/ha at 30-35 days after planting. Higher regional doses exist (up to 200 kg N/ha) — soil test / local officer decides. Boron/molybdenum only if soil test shows deficiency.",
+      "Pakistan": "Per acre: follow the ICAR-CIARI guide above as a starting point — no Pakistan-specific per-acre dose verified. Soil test / local agriculture officer only.",
+      "default": "Per acre, about 36 kg N, 32 kg P2O5, 24 kg K2O + FYM, most as basal with remaining N at 30-35 days. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "First irrigation immediately after transplanting; then every 3 days or weekly depending on season. Critical: head formation (cabbage) and curd formation (cauliflower) — any drought then causes small 'button' curds or split heads. Keep soil moist, never waterlogged."
+    },
+    "name": "Cabbage / Cauliflower",
+    "pest": "Main problems: (1) Diamondback moth — insect netting at transplant, hand-pick, Bt spray in evening on young larvae under leaves, repeat after rain; rotate Bt with spinosad-type if needed, follow label. (2) Black rot — disease-free seed, do NOT plant brassicas after brassicas (rotate 2-3 years), remove diseased residue, avoid overhead watering; copper fungicide only if labelled, follow label.",
+    "sowing": {
+      "India": "Rabi: nursery Sep-Oct, transplant Oct-Nov. Early cauliflower May-Jun nursery. Kharif in cooler hills Jun-Jul. Transplant 4-5-week-old seedlings. Optimum 15-21 C; above 27 C causes loose heads/bolting.",
+      "Pakistan": "Winter vegetables Sep-Nov.",
+      "default": "Cool-season crop, optimum 15-21 C. Transplant 4-5-week-old seedlings in autumn/winter (Sep-Nov in South Asia; Nov-Feb in cooler Nigeria highlands/Kenya highlands). Follow your local calendar."
+    },
+    "type": "vegetable"
+  },
+  "chickpea": {
+    "fertilizer": {
+      "India": "Per acre: about 8:16:8 kg N-P2O5-K2O, all as basal at sowing — no top-dressing of N needed, chickpea fixes its own nitrogen. PAU Punjab: urea 20 kg, SSP 125 kg, MOP 15 kg per acre + sulphur 8 kg/acre. FYM/compost 4-6 tonnes/ha 2 weeks before land preparation. Essential: seed inoculation with Rhizobium (Mesorhizobium ciceri), especially first time in a field.",
+      "Pakistan": "Per acre: same as India — about 8:16:8 kg N-P2O5-K2O, all basal at sowing, + Rhizobium seed inoculation. No N top-dressing needed.",
+      "default": "Per acre, about 8 kg N, 16 kg P2O5, 8 kg K2O, all basal at sowing. Inoculate seed with Rhizobium. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Mostly rainfed. Only 1-2 light irrigations if needed: at branching (about 45 days) and pod formation (about 75 days), or one at flowering + one at pod/grain filling. Excess water is harmful — extra vegetative growth, less yield, more wilt/root rot. Do not irrigate at flowering if rain is expected."
+    },
+    "name": "Chickpea / Gram",
+    "pest": "Main problems: (1) Gram pod borer — pheromone traps 5/acre, bird perches, Trichogramma release, NPV spray, neem seed kernel extract at flowering; chemical only at threshold (1-2 larvae/m row) if labelled, follow label. (2) Fusarium wilt — wilt-resistant varieties (JG 11, JG 14, JAKI 9218, Pusa 372), rotate with cereals, sow at correct time, seed treatment with Trichoderma.",
+    "sowing": {
+      "Ethiopia": "Sown on residual moisture after main rains end Sep-Oct; generally Oct-Nov, early November best in Jimma.",
+      "India": "Rainfed: complete sowing before 25 Oct. Irrigated: 20 Oct-10 Nov; best 2nd fortnight of October. Late sowing (Dec-Jan) cuts yield.",
+      "Pakistan": "Rainfed: complete sowing before 25 Oct. Irrigated: 20 Oct-10 Nov; best 2nd fortnight of October.",
+      "default": "Rabi / post-rainy crop, sown on residual moisture, Oct-Nov in South Asia. Frost at flowering damages pods. Follow your local calendar."
+    },
+    "type": "field"
+  },
+  "chilli": {
+    "fertilizer": {
+      "India": "Per acre (ICAR): about 49:24:24 kg N-P2O5-K2O + 10-15 tonnes FYM/acre at land preparation. 1/3 N + full P and K as basal; 1/3 N at 1 month after transplanting; remaining 1/3 N at 50-55 days / first harvest.",
+      "Pakistan": "Per acre: follow the ICAR guide above as a starting point — no Pakistan-specific per-acre dose verified. Soil test / local agriculture officer only.",
+      "default": "Per acre, about 49 kg N, 24 kg P2O5, 24 kg K2O + FYM. 1/3 N + all P and K basal; rest of N in 2 splits. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Irrigate at weekly intervals. Critical: flowering and fruit set — do not let plants wilt then; irrigate immediately after transplanting. Avoid waterlogging. Drip preferred for hybrids."
+    },
+    "name": "Chilli / Hot Pepper",
+    "pest": "Main problems: (1) Thrips + whitefly, leaf curl virus — cover nursery with 40-60 mesh net; yellow + blue sticky traps 10-20/acre; neem oil; maize/sorghum border + marigold trap crop; ROGUE (pull out and destroy) any curled/virus plant — do not spray it; resistant varieties. Chemical only if labelled, follow label. (2) Fruit borer — pheromone traps 5/acre, bird perches, HaNPV/Bt spray in evening; chemical only if labelled, follow label.",
+    "sowing": {
+      "India": "Nursery Jan-Feb, Jun-Jul, Sep-Oct. North India: Nov nursery to Jan transplant; Feb-Mar to Mar-Apr; May-Jun to Jun-Jul. Transplant 40-45-day-old seedlings.",
+      "Nigeria": "Rainy May-Jul; dry-season irrigated Nov-Feb.",
+      "Pakistan": "Nursery Feb, transplant Mar; second window late Aug-early Sep.",
+      "default": "Transplant 40-45-day-old nursery seedlings. In South Asia: Feb-Mar and Aug-Sep. Follow your local calendar."
+    },
+    "type": "vegetable"
+  },
+  "citrus": {
+    "fertilizer": {
+      "India": "Per tree, by age (PAU Punjab). Kinnow, 8 years and above: FYM 100 kg + Urea 1,920 g + SSP 2,750 g (= N 880 g, P 440 g). Potassium dose for kinnow UNVERIFIED — do NOT state a K dose for kinnow; soil test / local officer for potash. Sweet orange 7yr+: FYM 100 kg, Urea 1,500 g, SSP 2,000 g, MOP 175 g. Timing: all FYM in December; all SSP with first urea dose; urea in 2 equal splits — first half mid-Feb (before flowering), second half Apr-May (after fruit set). Apply about 30 cm from trunk, hoe in, then irrigate.",
+      "Pakistan": "Per tree, by age (PAU/Punjab): same as India — kinnow 8yr+ FYM 100 kg + Urea 1,920 g + SSP 2,750 g; sweet orange 7yr+ FYM 100 kg, Urea 1,500 g, SSP 2,000 g, MOP 175 g. Timing: all FYM December; urea in 2 splits mid-Feb and Apr-May. Kinnow potassium UNVERIFIED — soil test / local officer.",
+      "default": "Per tree, by age: 1-3 years FYM 10-30 kg + Urea 240-720 g; 8 years and above FYM 100 kg + Urea about 1,920 g + SSP about 2,750 g (kinnow). Urea in 2 splits, mid-Feb and Apr-May; FYM in December. Potassium dose for kinnow not verified — soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Over-irrigation is more harmful than under-irrigation (root/collar rot). Use basin/drip; do not let water touch the trunk; avoid flood irrigation. Spring Feb-Mar once a month; summer Apr-Jul twice a month; monsoon Aug as per rainfall; autumn Sep-Oct no irrigation; winter Nov-Jan once a month. Young trees (to 3-4 yr) weekly; older trees every 2-3 weeks. Critical: before sprouting/flowering and after fruit set. Stop irrigation at flowering and 2 weeks before harvest; restrict Oct-Nov."
+    },
+    "name": "Citrus / Kinnow / Orange",
+    "pest": "Main problems: (1) Citrus fruit fly — methyl-eugenol pheromone traps, orchard sanitation, bury fallen fruit; chemical type only, follow label; avoid sprays close to harvest. (2) Citrus psylla — sucks sap, spreads citrus greening (HLB, no cure); monitor new flushes (spring + monsoon), prune, remove affected shoots; systemic insecticide type at flush only if needed, follow label. Disease: citrus canker + gummosis — prune/destroy affected branches, Bordeaux paste on wounds, copper fungicide preventive, follow label.",
+    "sowing": {
+      "India": "Grafted/budded plants (T-budding): Feb-Mar and Sep-Oct. Avoid May-Jun peak heat for young plants. Flowering Feb-Mar; kinnow matures Dec-Feb (best harvest mid-Jan to mid-Feb).",
+      "Pakistan": "Grafted/budded plants: spring Feb-Mar and autumn Sep-Oct. Spacing about 22-25 ft (kinnow). Flowering Feb-Mar; kinnow matures Dec-Feb.",
+      "default": "Plant grafted/budded plants in spring after frost risk (Feb-Mar) or autumn (Sep-Oct). Spacing about 22-25 ft for kinnow. For Egypt/other regions no month window verified — plant in spring after frost / start of rains, confirm locally."
+    },
+    "type": "orchard"
+  },
+  "coffee": {
+    "fertilizer": {
+      "India": "Per acre (Coffee Board of India, for 1 tonne/ha clean coffee): Arabica about 57 kg N, 36 kg P2O5, 49 kg K2O; Robusta about 49 kg N, 36 kg P2O5, 49 kg K2O. Add 20-25 tonnes FYM/compost per ha. 3 splits: post-blossom (Apr-May), mid-monsoon break, post-monsoon (Oct-Nov). Do not apply in peak monsoon.",
+      "Kenya": "Per tree (KALRO/Coffee Research Foundation): NPK compound 250 g/tree, 6 months before main flowering and 2 weeks after onset of rains, along the drip line; nitrogen (CAN/ASN) 300 g/tree/year after main flowering, in 2 equal splits (east of Rift Valley) or 3 splits (west), at 3-4 week intervals. Lime 250 g/tree/year in dry weather. Foliar zinc + boron 2-3 kg/ha each, 2 months before main flowering.",
+      "default": "Per acre, about 49-57 kg N, 36 kg P2O5, 49 kg K2O per year (India Arabica/Robusta for 1 tonne/ha). Dose must be based on soil + leaf analysis. For Brazil, Vietnam, Ethiopia, Indonesia, Philippines no per-acre dose verified — soil test / local agriculture officer only."
+    },
+    "irrigation": {
+      "default": "Needs a 2-4 month dry period to trigger synchronized flowering, then steady moisture. Do NOT irrigate heavily during dry induction. Critical: 2-4 weeks immediately after flowering (fruit set — drought causes flower abortion); bean expansion, weeks 6-22 after flowering, highest water demand. Reduce water in final 8-12 weeks of maturation. Drip preferred."
+    },
+    "name": "Coffee",
+    "pest": "Main problems: (1) Coffee berry borer — strip-pick ALL cherries including fallen/damaged ones at end of harvest; alcohol-baited pheromone traps; Beauveria bassiana fungus spray when cherries are about 120 days after flowering. Chemical only if labelled, follow label. (2) Coffee leaf rust — orange-yellow powdery pustules under leaves; resistant varieties, prune for airflow, 30-50% shade, correct potassium deficiency after soil test; preventive copper fungicide before wet season only, follow label.",
+    "sowing": {
+      "Kenya": "Plant in the rainy seasons, April and October.",
+      "default": "Transplant nursery seedlings (4-6 pairs of leaves) at the start of the rainy season, when there is no frost risk. Pits dug 1-2 months before planting. Exact month for Brazil, Vietnam, Ethiopia, Indonesia, Philippines UNVERIFIED — plant at start of local rainy season, ask local extension."
+    },
+    "type": "orchard"
+  },
+  "dates": {
+    "fertilizer": {
+      "India": "Per palm: FYM 50 kg + N 600 g + P 100 g + K 700 g. Timing: Feb-Mar at start of active growth, again at male flowering, and during fruit development.",
+      "Pakistan": "Per tree: NO single official Pakistan standard dose — use trial ranges, not a fixed official dose, and always add soil test / local officer. Khairpur trial (best fruit weight): Urea 1 kg + DAP 1 kg + MOP 1 kg + Zinc sulphate 250 g + Boron 100 g per tree, in 3 splits — September, late December, first week of May. Conventional local practice was only 0.5 kg urea + 0.5 kg DAP per tree. FAO guideline: 0.65 kg N, 0.65 kg P, 0.87 kg K per tree per year. Organic manure 20-30 kg/tree/year.",
+      "default": "Per tree: FAO guideline 0.65 kg N, 0.65 kg P, 0.87 kg K per year; organic manure 20-30 kg/tree/year. No single official dose — soil test / local agriculture officer only."
+    },
+    "irrigation": {
+      "default": "Drought-tolerant but yield/quality fall with thirst; over-irrigation causes rot and red palm weevil. Light, frequent irrigation after planting; keep 2-3 m root zone moist. Sandy soil: every 7-10 days in summer, 15 days in winter. Young palm: daily for first 40 days, then every 5 days after year 1. Drip/bubbler preferred; do not flood trunk base. Critical: pollination/flowering Feb-Apr (keep soil moist), fruit growth spring-summer; avoid sudden heavy watering at ripening (fruit splits/sours). Rain at ripening causes fruit rot/cracking — bag bunches."
+    },
+    "name": "Dates / Date Palm",
+    "pest": "Main problems: (1) Red palm weevil — larvae tunnel unseen in trunk/crown and can kill the palm; inspect trunk/crown regularly, pheromone traps, seal pruning wounds, prune in winter, remove fallen fruit. Chemical (trunk injection) only if trap + crown check confirm attack — follow label / local officer urgently. (2) Rhinoceros beetle / lesser date moth — inspect crowns, remove/burn infested fronds, pheromone traps; chemical type only, follow label. Disease: fruit rot at ripening — bunch bagging, pick at khalal stage, good drainage.",
+    "sowing": {
+      "Egypt": "Feb-Apr (spring) and Sep-Oct (early autumn). Hand pollination Feb-Apr.",
+      "India": "Offshoots/suckers (10-25 kg, 2-3 years old) or tissue-culture plants: Feb-Mar (best) and Aug-Sep. Spacing 6-8 m. Keep 2-3 male palms per 100 females for pollination. First commercial bunch about year 4, full bearing about year 8.",
+      "Pakistan": "Offshoots/suckers (10-25 kg, 2-3 years old) or tissue-culture plants: Feb-Mar (best) and Aug-Sep. Spacing 6-8 m (8x8 m common). Keep 2-3 male palms per 100 females. First commercial bunch about year 4, full bearing about year 8.",
+      "default": "Plant offshoots/suckers Feb-Mar (best) or Aug-Sep. Spacing 6-8 m. Keep male palms for pollination (2-3 per 100 females). Follow your local calendar."
+    },
+    "type": "orchard"
+  },
+  "guava": {
+    "fertilizer": {
+      "India": "Per tree, by age (PAU): 10 years and above FYM 50 kg + Urea 1,000 g + SSP 2,500 g + MOP 1,500 g. 1-3 yr: FYM 10-20 kg, Urea 150-200 g, SSP 500-1,500 g, MOP 100-400 g. 4-6 yr: FYM 25-40 kg, Urea 300-600 g, SSP 1,500-2,000 g, MOP 600-1,000 g. 7-10 yr: FYM 40-50 kg, Urea 750-1,000 g, SSP 2,000-2,500 g, MOP 1,100-1,500 g. Timing: half Urea + SSP + MOP and full FYM in May-Jun; remaining half in Sep-Oct.",
+      "Pakistan": "Per tree, by age (SAWIE Pakistan manual, agrees with PAU): 10 years and above FYM 50 kg + Urea 1,000 g + SSP 2,500 g + MOP 1,500 g. Timing: half in May-Jun, remaining half in Sep-Oct (FYM in Dec in PAU variant).",
+      "default": "Per tree, by age: 10 years and above FYM 50 kg + Urea 1,000 g + SSP 2,500 g + MOP 1,500 g. Half in May-Jun, remaining half in Sep-Oct. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Irrigate immediately after planting, again on day 3, then as per soil/climate. Young plantation: weekly in summer, 2-3 irrigations in winter. Established orchard needs little irrigation. Critical: avoid flood irrigation at flowering (causes heavy flower drop). To get only the superior winter crop: withhold irrigation Apr-May, fertilize in Jun, flower Aug-Sep. Fruit-bearing trees: weekly watering May-Jul in dry areas; winter watering reduces fruit drop and increases size. Drip recommended."
+    },
+    "name": "Guava",
+    "pest": "Main problems: (1) Fruit fly — most serious pest, especially rainy-season crop; avoid rainy-season crop where fly is severe, harvest on time, collect/destroy infested fruit, fruit bagging; chemical type only, follow label. (2) Guava wilt — yellowing, wilting, tree dies; well-drained field, do not let water stand in basin, uproot and burn wilted trees, wilt-tolerant rootstock. Chemical soil drench with copper oxychloride-type fungicide around nearby trees only, follow label.",
+    "sowing": {
+      "India": "Feb-Mar or Aug-Sep. Spacing 6x5 m (about 132 plants/acre at 7 m square). Plant grafted/air-layered plants, not seed. Flowers twice a year: Apr-May (rainy crop, Aug harvest, poorer quality) and Aug-Sep (winter crop, Dec-Feb harvest, superior quality).",
+      "Pakistan": "Feb-Mar or Aug-Sep. Spacing 6x5 m. Plant grafted/air-layered plants, not seed.",
+      "default": "Plant grafted/air-layered plants Feb-Mar or Aug-Sep. Spacing 6x5 m. For Egypt/other regions no month window verified — plant in spring / monsoon, confirm locally."
+    },
+    "type": "orchard"
+  },
+  "mango": {
+    "fertilizer": {
+      "India": "Per tree, by age (PAU product table): 10 years and above FYM 100 kg + Urea about 500 g + SSP 1,000 g + MOP 1,000 g. FYM + SSP in Dec, N + K in Feb. (This is a product table, NOT the Pakistan nutrient table — do not mix them.) Nutrient table (SAU/ITFNET, also used in India): 10yr+ FYM 50 kg + N 1 kg + P 500 g + K 1 kg per tree/year.",
+      "Pakistan": "Per tree, by age (Punjab / Sindh Agriculture University): 1 year: FYM 5 kg + N 100 g + P 50 g + K 100 g. 2 yr: 10 kg / 200 / 100 / 200 g. 3 yr: 15 kg / 300 / 200 / 300 g. 5 yr: 25 kg / 500 / 400 / 500 g. 7 yr: 35 kg / 700 / 500 / 700 g. 10 years and above: FYM 50 kg + N 1,000 g (1 kg) + P 500 g + K 1,000 g (1 kg). Timing (Multan): half after fruit harvest + half in February; FYM all in Aug-Sep. Faisalabad: Feb and Apr. Practical Multan example for a big bearing tree: urea 2 kg + SOP/MOP 1 kg + DAP 1 kg in early Feb, 1 kg urea in Apr, after 15 Aug 1 kg urea + P and K if needed. Young trees: FYM only, 5-10 kg/plant.",
+      "default": "Per tree, by age: 10 years and above FYM 50 kg + N 1 kg + P 500 g + K 1 kg per tree per year. Half after fruit harvest + half in February; FYM all in Aug-Sep. Apply under canopy (drip line), 45-90 cm from trunk, mix in, then irrigate. Never against the trunk. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Young/non-bearing trees: light, frequent watering; 2 irrigations/week in hot months for first 4-6 months. Summer every 5-7 days; winter every 25-30 days. Bearing trees: fruit development Apr-Jun is critical — irrigate every 10-12 days. Light irrigation after Feb fertilizer. No irrigation Oct-Dec (dormancy). Do not irrigate wet soil (root rot). Do not spray insecticide on open flowers (kills pollinators)."
+    },
+    "name": "Mango",
+    "pest": "Main problems: (1) Mango hopper — active Feb-Mar at flowering; prune for light/air, orchard sanitation, avoid excess N and over-irrigation; neonicotinoid-type insecticide at panicle emergence only if needed, follow label; avoid spraying at full bloom. (2) Fruit fly — methyl-eugenol pheromone traps, protein bait, collect/destroy fallen fruit, timely harvest, fruit bagging; chemical type only, follow label. Disease: powdery mildew (white powder on inflorescence) — sanitation, wettable sulphur preventive before flowering, follow label; anthracnose — prune dead wood, Bordeaux paste on cuts, copper fungicide, follow label.",
+    "sowing": {
+      "India": "Grafted plants Feb-Mar and Jul-Sep. Pits 1x1x1 m dug a month earlier; spacing 9x9 m for grafted varieties (49 plants/acre). Plant in cool evening hours. Bearing starts 4-6 years.",
+      "Pakistan": "Grafted plants Feb-Mar (spring) and Aug-Sep / Sep-Oct (autumn/monsoon). Pits 1x1x1 m dug a month earlier; spacing 9x9 m (49 plants/acre); Dusheri/Anwar Ratol about 11 m, Sindhri/Langra about 15 m. Plant in cool evening hours; protect from wind. Bearing starts 4-6 years.",
+      "default": "Plant grafted plants Feb-Mar or Jul-Sep (monsoon). Pit 1x1x1 m, spacing about 9x9 m. For Egypt/other regions no month window verified — plant grafted plants in spring after frost risk or at start of rains, confirm locally."
+    },
+    "type": "orchard"
+  },
+  "okra": {
+    "fertilizer": {
+      "India": "Per acre (PAU): Nitrogen 36 kg as urea 80 kg/acre; Phosphorus and Potash UNVERIFIED as a fixed dose — as per soil test only. FYM 120-150 quintals/acre as basal. Half N at sowing, remaining half after first picking. Other Indian sources cite up to 160:100:100 kg/ha — a higher-input recommendation, NOT the PAU dose; do not mix them.",
+      "Pakistan": "Per acre: follow the PAU guide above as a starting point — no Pakistan-specific per-acre dose verified. Soil test / local agriculture officer only.",
+      "default": "Per acre (PAU): N 36 kg as urea 80 kg; P and K as per soil test only. FYM as basal. Half N at sowing, rest after first picking. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Pre-sowing irrigation in summer if soil is dry. Summer every 4-5 days; rainy season every 10-12 days. Critical: flowering and fruiting — keep soil moist but never waterlogged. Drip preferred."
+    },
+    "name": "Okra / Ladyfinger",
+    "pest": "Main problems: (1) Yellow vein mosaic virus (whitefly) — NO cure once infected; resistant varieties (Arka Anamika, Arka Abhay, Parbhani Kranti, Pusa Sawani, Punjab 7/8); rogue infected plants immediately; yellow sticky traps; neem oil for whitefly. (2) Shoot and fruit borer — remove/destroy bored shoots and fruits weekly; maize/sorghum border; pheromone traps; Bt spray; chemical only if labelled, follow label.",
+    "sowing": {
+      "India": "Kharif Jun-Jul; spring-summer Feb-Mar; hills Apr-Jul. Direct-sown, no nursery.",
+      "Nigeria": "Mar-Jun (rainy season main crop).",
+      "Pakistan": "Direct-sow Mar-Apr; monsoon Jul-Aug also possible.",
+      "default": "Direct-sown. Kharif Jun-Jul, spring Feb-Mar in South Asia; Mar-Jun in Nigeria. Follow your local calendar."
+    },
+    "type": "vegetable"
+  },
+  "onion": {
+    "fertilizer": {
+      "India": "Per acre (ICAR-DOGR, Rabi): N:P2O5:K2O = 44:16:24 kg. At transplanting: 16 kg N + all P (16 kg) + all K (24 kg). At 30 days: 14 kg N. At 45 days: 14 kg N. Stop N by bulb initiation — late N gives thick necks, poor storage. FYM 15 tonnes/ha (about 6 tonnes/acre) + sulphur 15-30 kg/ha at transplanting. PAU variant: N 40 kg, P 20 kg, K 20 kg per acre as urea 90 kg + SSP 125 kg + MOP 35 kg + 20 tonnes FYM; half N + all P,K at transplant, rest N 4 weeks after.",
+      "Pakistan": "Per acre: NO verified Pakistan per-acre dose found — soil test / local agriculture officer only. Do not use the India DOGR dose as a Pakistan dose.",
+      "default": "Per acre (ICAR-DOGR Rabi): about 44 kg N, 16 kg P2O5, 24 kg K2O. At transplanting 16 N + all P and K; 14 N at 30 days; 14 N at 45 days; stop N by bulb initiation. For Pakistan, Bangladesh and Egypt no per-acre dose verified — soil test / local agriculture officer only."
+    },
+    "irrigation": {
+      "default": "Critical: bulb formation / bulbing — most sensitive stage. Irrigate at transplanting, again 3 days later. Rabi: 12-15 light irrigations, every 7-10 days. Stop irrigation 10-15 days before harvest, when tops start falling / neck fall 50-75%. Excess water, or dry spell followed by heavy irrigation, causes split scales, doubles and bolting. Irrigate early in day so leaves dry before night."
+    },
+    "name": "Onion",
+    "pest": "Main problems: (1) Thrips — barrier of 2 rows maize (or 1 maize + 1 wheat) around field 30 days before transplanting; seedling root dip before transplant; 2-3 year rotation away from onion/garlic; destroy debris; avoid excess N; spray only above about 30 thrips/plant, insecticide type only, follow label. (2) Purple blotch + Stemphylium blight — resistant variety, 2-3 year rotation, clean transplants, destroy infected debris, avoid excess N, irrigate early so foliage dries; fungicide type only from 30 days or first spots, follow label.",
+    "sowing": {
+      "Bangladesh": "Winter/bulb: late Oct. Summer varieties: nursery mid-Feb to mid-Mar. Seed crop: late Nov.",
+      "Egypt": "Nursery about Sep-Oct, 6-8 weeks before transplant. Upper Egypt 1st half Nov; Fayoum/Minya Oct-Nov; Lower Egypt mid-Oct to end Nov (to 1 Jan for late red varieties).",
+      "India": "Rabi (main): nursery mid-Oct to mid-Nov, transplant mid-Dec to mid-Jan, harvest Apr-May / May-Jun. Kharif: nursery mid-Jun, transplant 1st week Aug. Late kharif: nursery Aug, transplant Sep.",
+      "Pakistan": "Nursery Oct-Nov; transplant Dec-Jan; harvest May-Jun. Lower Sindh: nursery Jun-Sep, transplant Jul-Oct. Hills/Quetta: Feb-Mar after frost.",
+      "default": "Rabi (main) in South Asia: nursery Oct-Nov, transplant Dec-Jan. Kharif: nursery Jun, transplant Aug. Follow your local season — do not use one month without the season."
+    },
+    "type": "vegetable"
+  },
+  "potato": {
+    "fertilizer": {
+      "India": "Per acre (PAU): Urea 165 kg + SSP 155 kg + MOP 40 kg (= N 75 kg, P 25 kg, K 25 kg per acre in PAU table). PAU variant: 80 kg urea + 155 kg SSP + 40 kg MOP + 20 tonnes FYM. All P + all K (or half K) + half N in furrow/ridge at planting; remaining half N side-dressed at earthing-up, 25-35 days after planting, before tuber initiation. FYM 20 tonnes/acre 10-15 days before planting.",
+      "Pakistan": "Per acre (Potato Research Institute Sahiwal / AARI): 61-73 kg N, 40-51 kg P2O5, 51-61 kg K2O. Single-paper variant: N 100 kg, P 50 kg, K 50 kg, zinc sulphate (21%) 10 kg + 12-15 tonnes FYM/acre 45-60 days before sowing — treat as a single-paper figure, soil test first. All P + all K + half N at planting; remaining half N at earthing-up, 25-35 days after planting.",
+      "default": "Per acre, about 61-75 kg N, 25-51 kg P2O5, 25-61 kg K2O (dose differs by country — use your country's figure). All P + all K + half N at planting; rest of N at earthing-up, 25-35 days after planting. For Bangladesh, Egypt and USA no per-acre dose verified — soil test / local agriculture officer only."
+    },
+    "irrigation": {
+      "default": "Critical: tuber initiation to tuber bulking / full bloom. Keep soil at 80-90% field capacity in that stage; water stress causes knobs, growth cracks, translucent end. Pakistan: 1st irrigation 7 days after sowing, then every 7-10 days, total 6-7 irrigations; avoid waterlogging (blackleg risk). Do not irrigate in cloudy/foggy weather when late blight risk is high."
+    },
+    "name": "Potato",
+    "pest": "Main problems: (1) Late blight — certified disease-free seed, moderately resistant variety (Punjab Potato-104, Kufri Jyoti / Kufri Sutlej), destroy cull piles and volunteers, high ridge + earthing-up, wide spacing so canopy dries, kill vines at least 2 weeks before harvest; protectant fungicide type preventively, follow label. (2) Aphids (virus vector in seed crop) — yellow sticky traps; in seed crop cut haulms when aphids reach 20 per 100 leaves; insecticide type only if above threshold, follow label; do not spray within 3 weeks of harvest.",
+    "sowing": {
+      "Bangladesh": "Winter/rabi: late Oct-early Nov planting, harvest Feb-Mar.",
+      "Egypt": "Fall Oct-Nov; summer Jan-Feb (historic table, not a current extension bulletin).",
+      "India": "Early: 25 Sep-10 Oct; medium: 1st-3rd week Oct; late: 3rd week Oct-1st week Nov; spring: 2nd fortnight Jan. Optimum when max 30-32 C / min 18-20 C.",
+      "Pakistan": "Autumn/main: 15 Sep-15 Nov (main winter crop 15 Sep-15 Oct in Punjab). Spring: 1 Jan-15 Feb. Summer (hills/KP): 1 Apr-30 Jun.",
+      "USA": "Temperate North: Apr-May, 1-2 weeks before last frost; South: winter/early spring.",
+      "default": "Plant in the cool season. South Asia: Sep-Nov (autumn/main), Jan-Feb (spring). Temperate regions: Apr-May before last frost. Follow your local calendar."
+    },
+    "type": "field"
+  },
+  "sunflower": {
+    "fertilizer": {
+      "India": "Per acre (TNAU): hybrids, irrigated about 24:36:24 kg N-P2O5-K2O; rainfed about 16:20:16 kg. FYM 12.5 tonnes/ha before last ploughing; sulphur 25 kg/ha if deficient. 50% N + full P and K as basal at sowing; remaining 50% N in 2 equal splits — at 30 days (button/bud stage) and 55 days (flowering).",
+      "Pakistan": "Per acre: use the India TNAU window/dose as a starting point — exact Pakistan dose UNVERIFIED. Soil test / local agriculture officer only.",
+      "default": "Per acre, about 24 kg N, 36 kg P2O5, 24 kg K2O (irrigated hybrids). 50% N + all P and K basal; rest of N at 30 days and 55 days. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Total water 500-600 mm. Minimum 4 irrigations in rabi: seedling, bud, flowering, grain filling. Most sensitive: bud initiation (about 30 days), flower opening (45-50 days), seed filling (60-75 days). Irrigate every 8-10 days in light soils, 15-25 days in heavy soils. Stop irrigation 20 days before harvest."
+    },
+    "name": "Sunflower",
+    "pest": "Main problems: (1) Head borer — pheromone traps 4/acre, intercrop maize/groundnut/green gram, marigold trap crop, hand-pick larvae, neem oil / Bt / NPV spray; chemical only if labelled, follow label; spray early morning/evening when bee activity is low. (2) Alternaria leaf spot/blight — early sowing, resistant varieties, crop rotation, remove infected plants, seed treatment; fungicide (mancozeb-type) only if labelled, follow label.",
+    "sowing": {
+      "India": "Kharif 1st week Jul-1st week Aug; Rabi rainfed 1st fortnight Oct, irrigated Nov-Dec; summer last week Jan-1st week Feb. North India spring crop: sow by end of January.",
+      "Pakistan": "Rabi/spring: sow Jan-Feb. Kharif Jul-Aug in Sindh/Punjab — exact Pakistan month UNVERIFIED, use India window and check local extension.",
+      "default": "Photo-insensitive — can be grown in any season, but avoid flowering during heavy rain. Kharif Jul-Aug, Rabi Oct-Dec, summer Jan-Feb in South Asia. Follow your local calendar."
+    },
+    "type": "field"
+  },
+  "tomato": {
+    "fertilizer": {
+      "India": "Per acre (PAU Punjab): N:P:K 60:25:25 kg, as Urea 130 kg + SSP 155 kg + MOP 45 kg. Half N + full P and full K basal before transplanting; 1/4 N at 20-30 days after transplanting; remaining N at about 2 months.",
+      "Pakistan": "Per acre (AARI Faisalabad / PARC): 45-53 kg N, 30-36 kg P2O5, 32-40 kg K2O (110-130 kg N, 75-90 kg P2O5, 80-100 kg K2O per hectare) + FYM 8-10 tonnes/acre before transplanting. All P + half K basal at transplanting; N in 3 equal splits — at transplanting, about 30 days (flower initiation), and about 55-60 days (fruit development) with remaining K.",
+      "default": "Per acre, about 45-60 kg N, 25-36 kg P2O5, 25-40 kg K2O + FYM. All P + half K basal; N in 3 splits up to fruit development. Dose differs by country — use your country's figure. Confirm with soil test / local agriculture officer."
+    },
+    "irrigation": {
+      "default": "Critical: flowering and fruit development — never let soil dry out then flood. Irregular watering causes blossom-end rot and fruit cracking. Keep soil evenly moist; drip + mulch recommended. Light soils every 3-4 days, heavy soils every 5-6 days; winter every 10-15 days, summer every 6-7 days. Water at base, not on leaves (blight risk)."
+    },
+    "name": "Tomato",
+    "pest": "Main problems: (1) Fruit borer — pheromone traps, remove/destroy damaged fruit; insecticide type only if needed, follow label. (2) Early blight — brown concentric-ring spots on lower leaves; crop rotation, remove debris, spacing/air flow, avoid overhead watering; fungicide type only (mancozeb/chlorothalonil type), follow label. Also: whitefly spreads leaf-curl virus — nursery netting; leaf miner — neem early.",
+    "sowing": {
+      "Egypt": "Sow Aug-Oct and Feb-Mar (commercial guide, UNVERIFIED from an official Egyptian source — indicative, confirm locally).",
+      "India": "Spring: sow late Nov, transplant 2nd fortnight Jan. Autumn: sow Jul-Aug, transplant Aug-Sep. Hills: sow Mar-Apr, transplant Apr-May. Rabi (main) Oct-Nov; Kharif Jun-Jul; summer Jan-Feb. Transplant when seedlings 6-9 inches / 25-30 days old.",
+      "Pakistan": "Nursery Oct to mid-Nov (Punjab Agriculture Dept). Autumn crop Sep-Oct and spring crop Jan-Feb. Seed about 50 g/acre for nursery. Transplant when seedlings 25-30 days old, 3-4 true leaves.",
+      "default": "Transplant 25-30-day-old nursery seedlings. Aim for flowering/fruit-set at 21-28 C day, 15-20 C night. Avoid fruit-set in peak monsoon (blight) and peak summer heat. Follow your local calendar."
+    },
+    "type": "vegetable"
+  }
+}
