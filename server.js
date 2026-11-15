@@ -147,56 +147,103 @@ function safetyNote(lang) {
   return (lang === 'Urdu' || lang === 'Punjabi') ? SAFETY_URDU : SAFETY;
 }
 
+// ---------- Crop advice data (country-wise, rechecked 2026-11-16) ----------
+// crop_advice.json: 20 crops, each with sowing / fertilizer / irrigation /
+// pest advice, with country keys only where advice genuinely differs.
+// The old code gave ONE generic (mostly wheat) answer to every crop —
+// that gave mango the wheat DAP/urea dose. That bug is fixed here:
+// farmingAnswer() now looks up the farmer's crop first, and the generic
+// answer is ONLY a fallback that says so and gives NO crop dose.
+let CROP_ADVICE = {};
+try {
+  CROP_ADVICE = JSON.parse(fs.readFileSync(path.join(__dirname, 'crop_advice.json'), 'utf8'));
+} catch (e) {
+  console.error('Could not load crop_advice.json, using generic answers only:', e.message);
+}
+
+// Match a farmer's crop text (or question text) to a crop key.
+const CROP_ALIASES = [
+  [/wheat|gandum|gehun|gandam/, 'wheat'],
+  [/rice|paddy|dhan|chawal|basmati|irri/, 'rice'],
+  [/maize|corn|makai|makka/, 'maize'],
+  [/cotton|kapas|kapaas/, 'cotton'],
+  [/sugarcane|ganna|sugar cane|kamad/, 'sugarcane'],
+  [/soybean|soya|soyabean/, 'soybean'],
+  [/potato|aloo|alu/, 'potato'],
+  [/onion|piyaz|pyaaz/, 'onion'],
+  [/tomato|tamatar/, 'tomato'],
+  [/mango|aam|chaunsa|dusehri|langra|anwar|ratol|sindhri/, 'mango'],
+  [/citrus|kinnow|orange|malta|mosambi|lemon|nimbu|lime/, 'citrus'],
+  [/guava|amrood|amrud/, 'guava'],
+  [/date|khajoor|khajur/, 'dates'],
+  [/coffee/, 'coffee'],
+  [/chilli|chili|mirch|pepper/, 'chilli'],
+  [/okra|ladyfinger|bhindi|lady finger/, 'okra'],
+  [/brinjal|eggplant|baingan|baigan/, 'brinjal'],
+  [/cabbage|cauliflower|gobhi|phool gobhi|band gobhi/, 'cabbage'],
+  [/chickpea|gram|chana|pulses|dal/, 'chickpea'],
+  [/sunflower|surajmukhi/, 'sunflower'],
+  [/vegetable|sabzi|sabji/, 'vegetables'],
+];
+function findCropKey(text) {
+  const t = (text || '').toLowerCase();
+  for (const [re, key] of CROP_ALIASES) if (re.test(t)) return key;
+  return null;
+}
+function pickByCountry(map, country) {
+  if (!map) return null;
+  return map[country] || map.default || null;
+}
+
 function farmingAnswer(text, farmer) {
   const lang = (farmer && farmer.language) || 'English';
   const t = text.toLowerCase();
   const crop = (farmer && farmer.crop) || 'your crop';
   const country = (farmer && farmer.country) || 'your country';
   const suffix = safetyNote(lang);
+  const key = findCropKey(crop + ' ' + t);
+  const advice = key && key !== 'vegetables' ? CROP_ADVICE[key] : null;
+  const displayCrop = advice ? advice.name : crop;
 
-  // Sowing
-  if (/(sow|sowing|seed|beej|bij|planting|when to sow|kab.*bo)/.test(t)) {
-    return `Sowing — ${crop} (${country}):\n`
-      + `• Sow in your local recommended window for ${crop} — it changes by district and by season, so check the local agriculture department calendar.\n`
-      + `• Use clean, certified seed. Wheat example: 40–45 kg seed per acre, DAP at sowing. For other crops, use the seed rate on the seed bag / local advice.\n`
-      + `• Sow at the right depth (about 2–5 cm for most small seeds), in moist soil, not in a flooded field.\n`
-      + `• If rain is coming in 1–2 days, wait — wet sowing can rot the seed.${suffix}`;
+  // Sowing / planting — crop + country specific
+  if (/(sow|sowing|seed|beej|bij|planting|when to sow|kab.*bo|lagana|plant)/.test(t)) {
+    if (advice) {
+      const when = pickByCountry(advice.sowing, country);
+      return `Planting / sowing — ${displayCrop} (${country}):\n• ${when}\n• ${advice.type === 'orchard' ? 'Use healthy grafted plants from a reliable nursery; plant in cool evening hours and water well.' : 'Use clean, certified seed, at the rate on the seed bag / local advice.'}\n• If rain is coming in 1-2 days, wait — wet sowing can rot seed.${suffix}`;
+    }
+    return `Sowing — ${crop} (${country}):\n• This is GENERAL advice only — I do not have crop-specific sowing advice for ${crop} yet. Sow in your local recommended window for ${crop}; it changes by district and season, so check the local agriculture department calendar.\n• Use clean, certified seed, at the rate on the seed bag / local advice. Sow at the right depth in moist soil, not in a flooded field.\n• If rain is coming in 1-2 days, wait — wet sowing can rot the seed. Confirm with your local agriculture officer.${suffix}`;
   }
-  // Fertilizer / nutrients
+  // Fertilizer / nutrients — crop + country specific
   if (/(fertili|khad|urea|dap|npk|nutrient|micronutrient|zinc|boron)/.test(t)) {
-    return `Fertilizer — ${crop}:\n`
-      + `• Best is a soil test first. Without it, do not guess a big dose.\n`
-      + `• General example (wheat, per acre): DAP 1 bag at sowing, urea in 2 splits — half at first irrigation (20–25 days, CRI stage) and half at tillering. Adjust by soil test and local advice.\n`
-      + `• Micronutrients (zinc, boron) only if deficiency is seen or soil test says so — e.g. zinc sulphate 5 kg/acre for rice/wheat where zinc is low.\n`
-      + `• Do not put all urea at once — it wastes and can burn the crop.${suffix}`;
+    if (advice) {
+      const dose = pickByCountry(advice.fertilizer, country);
+      const unit = advice.type === 'orchard' ? 'per TREE, by age' : 'per ACRE';
+      return `Fertilizer — ${displayCrop} (${country}, ${unit}${key === 'wheat' ? '' : ' — NOT a wheat dose'}):\n• ${dose}\n• Best is a soil test first. Without it, use the lowest dose for your soil type. Do not put all urea at once — it wastes and can burn the crop. Micronutrients (zinc, boron) only if deficiency is seen or a soil test says so.${suffix}`;
+    }
+    return `Fertilizer — ${crop} (${country}):\n• This is GENERAL advice only — I do not have a verified fertilizer dose for ${crop} yet, so I will NOT give you a number. Do a soil test first, and ask your local agriculture officer for the dose for ${crop} in ${country}.\n• Do not use a wheat dose for another crop — dose, timing and splits are different for every crop. Do not put all urea at once.${suffix}`;
   }
-  // Irrigation / water
+  // Irrigation / water — crop specific
   if (/(irrigat|water|pani|sinchai|when to water)/.test(t)) {
-    return `Irrigation — ${crop}:\n`
-      + `• Water at the critical stages: for wheat, first irrigation at 20–25 days after sowing (CRI), then tillering (40–45 days), jointing (70–75 days) and flowering (90–95 days).\n`
-      + `• Do not flood the field. Light, timely water is better than one heavy flood.\n`
-      + `• Do not irrigate just before rain, and do not spray on a wet field.${suffix}`;
+    if (advice) {
+      const w = pickByCountry(advice.irrigation, country);
+      return `Irrigation — ${displayCrop} (${country}):\n• ${w}\n• Do not flood the field. Light, timely water is better than one heavy flood. Do not irrigate just before rain, and do not spray on a wet field.${suffix}`;
+    }
+    return `Irrigation — ${crop} (${country}):\n• This is GENERAL advice only — water at the critical stages for ${crop} (flowering and fruit/grain filling are critical for most crops). Light, timely water is better than one heavy flood. Do not irrigate just before rain, and do not spray on a wet field. Confirm the stages with your local agriculture officer.${suffix}`;
   }
-  // Pest / disease
+  // Pest / disease — crop specific
   if (/(pest|disease|keera|keeday|bemari|rog|aphid|borer|rust|blight|fungus|spray)/.test(t)) {
-    return `Pest / disease — ${crop}:\n`
-      + `• First check: which part is affected (leaf, stem, root, grain), and how much of the field? Take a clear photo and note when it started.\n`
-      + `• Non-chemical first where it works: remove badly affected leaves, keep the field clean, avoid over-watering.\n`
-      + `• If spray is needed, use only a product allowed in ${country} for ${crop}. Example dose format (follow your product label, not this alone): mix the label dose per litre of water, use about 100–120 litres of water per acre, spray in the evening, repeat after 7–10 days only if needed.\n`
-      + `• Never spray a product meant for another crop, and never harvest before the label waiting period.${suffix}`;
+    if (advice) {
+      return `Pest / disease — ${displayCrop} (${country}):\n• ${advice.pest}\n• First check: which part is affected (leaf, stem, root, grain/fruit), and how much of the field? Take a clear photo and note when it started.\n• Non-chemical first where it works: remove badly affected leaves/fruit, keep the field clean, avoid over-watering.\n• If spray is needed, use only a product allowed in ${country} for ${displayCrop}, at the dose on the product label — never harvest before the label waiting period.${suffix}`;
+    }
+    return `Pest / disease — ${crop} (${country}):\n• This is GENERAL advice only. First check: which part is affected, and how much of the field? Take a clear photo and note when it started.\n• Non-chemical first: remove badly affected leaves, keep the field clean, avoid over-watering.\n• If spray is needed, use only a product allowed in ${country} for ${crop}, at the dose on the product label, and never harvest before the label waiting period. Confirm with your local agriculture officer.${suffix}`;
   }
   // Weather
   if (/(weather|mausam|rain|barish|forecast|hawa)/.test(t)) {
-    return `Weather:\n`
-      + `• I do not have a live weather feed in this free version yet — please check your local forecast before sowing, spraying or irrigating.\n`
-      + `• Rule of thumb: do not spray if rain is expected within 6 hours, and do not irrigate just before heavy rain.\n`
-      + `• After rain, wait for the field to dry before spraying or walking in it, or you will spread disease.${suffix}`;
+    return `Weather:\n• I do not have a live weather feed in this free version yet — please check your local forecast before sowing, spraying or irrigating.\n• Rule of thumb: do not spray if rain is expected within 6 hours, and do not irrigate just before heavy rain.\n• After rain, wait for the field to dry before spraying or walking in it, or you will spread disease.${suffix}`;
   }
   // Market / price
   if (/(price|mandi|market|rate|sell|bech)/.test(t)) {
-    return `Market price:\n`
-      + `• I do not have live mandi prices in this free version yet. Check your nearest mandi / local buyer before selling.\n`
-      + `• Do not sell in a hurry on the first offer — ask 2–3 buyers, and check quality/weight before the deal.${suffix}`;
+    return `Market price:\n• I do not have live mandi prices in this free version yet. Check your nearest mandi / local buyer before selling.\n• Do not sell in a hurry on the first offer — ask 2-3 buyers, and check quality/weight before the deal.${suffix}`;
   }
   // Default: ask for more detail
   return `Thank you. To help you better, please tell me:\n`
